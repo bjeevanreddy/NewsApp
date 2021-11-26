@@ -3,7 +3,9 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,22 +18,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entertainment" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElR-af-4XO">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcN-Ka-woB">
                         <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                        <color key="textColor" red="0.40386703330000001" green="0.091632883430000006" blue="0.071842362709999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entertainment" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElR-af-4XO">
+                                <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ElR-af-4XO" secondAttribute="trailing" id="17p-qG-5Zl"/>
+                            <constraint firstItem="ElR-af-4XO" firstAttribute="leading" secondItem="gcN-Ka-woB" secondAttribute="leading" id="NXE-Bm-uBw"/>
+                            <constraint firstItem="ElR-af-4XO" firstAttribute="top" secondItem="gcN-Ka-woB" secondAttribute="top" id="Tqi-Xc-wv5"/>
+                            <constraint firstAttribute="bottom" secondItem="ElR-af-4XO" secondAttribute="bottom" id="av4-ha-szq"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="gcN-Ka-woB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UPx-Fg-9dq"/>
+                <constraint firstItem="gcN-Ka-woB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Vzv-1G-15t"/>
+                <constraint firstAttribute="bottom" secondItem="gcN-Ka-woB" secondAttribute="bottom" id="fZe-7n-EXl"/>
+                <constraint firstAttribute="trailing" secondItem="gcN-Ka-woB" secondAttribute="trailing" id="yaW-Mp-SwD"/>
+            </constraints>
             <size key="customSize" width="70" height="36"/>
             <connections>
+                <outlet property="cellView" destination="gcN-Ka-woB" id="Awk-So-MiK"/>
                 <outlet property="topicLabel" destination="ElR-af-4XO" id="qB2-tP-gCr"/>
             </connections>
             <point key="canvasLocation" x="152.17391304347828" y="95.089285714285708"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
