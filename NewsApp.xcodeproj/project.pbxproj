@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		3F1F7168273D8515009CE356 /* TrendingTopicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1F7166273D8515009CE356 /* TrendingTopicCollectionViewCell.swift */; };
 		3F1F7169273D8515009CE356 /* TrendingTopicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1F7167273D8515009CE356 /* TrendingTopicCollectionViewCell.xib */; };
 		3F20FBE42751818400B106C5 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F20FBE32751818400B106C5 /* CountryViewController.swift */; };
+		3F20FBE6275195FA00B106C5 /* countryISO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F20FBE5275195FA00B106C5 /* countryISO.swift */; };
+		3F20FBE92751A0C800B106C5 /* IsoCountryCodes in Frameworks */ = {isa = PBXBuildFile; productRef = 3F20FBE82751A0C800B106C5 /* IsoCountryCodes */; };
 		3F47EDAD273CA31300377BB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47EDAC273CA31300377BB1 /* AppDelegate.swift */; };
 		3F47EDAF273CA31300377BB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47EDAE273CA31300377BB1 /* SceneDelegate.swift */; };
 		3F47EDB1273CA31300377BB1 /* HeadLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47EDB0273CA31300377BB1 /* HeadLinesViewController.swift */; };
@@ -32,6 +34,7 @@
 		3F1F7166273D8515009CE356 /* TrendingTopicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTopicCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F1F7167273D8515009CE356 /* TrendingTopicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingTopicCollectionViewCell.xib; sourceTree = "<group>"; };
 		3F20FBE32751818400B106C5 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
+		3F20FBE5275195FA00B106C5 /* countryISO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = countryISO.swift; sourceTree = "<group>"; };
 		3F47EDA9273CA31300377BB1 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F47EDAC273CA31300377BB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F47EDAE273CA31300377BB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F20FBE92751A0C800B106C5 /* IsoCountryCodes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +135,7 @@
 			children = (
 				3FB26DDD274D699300FE9FFD /* ApiService.swift */,
 				3FB26DDF274D6B3C00FE9FFD /* API_Strings.swift */,
+				3F20FBE5275195FA00B106C5 /* countryISO.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -151,6 +156,9 @@
 			dependencies = (
 			);
 			name = NewsApp;
+			packageProductDependencies = (
+				3F20FBE82751A0C800B106C5 /* IsoCountryCodes */,
+			);
 			productName = NewsApp;
 			productReference = 3F47EDA9273CA31300377BB1 /* NewsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -171,7 +179,7 @@
 				};
 			};
 			buildConfigurationList = 3F47EDA4273CA31300377BB1 /* Build configuration list for PBXProject "NewsApp" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -179,6 +187,9 @@
 				Base,
 			);
 			mainGroup = 3F47EDA0273CA31300377BB1;
+			packageReferences = (
+				3F20FBE72751A0C800B106C5 /* XCRemoteSwiftPackageReference "IsoCountryCodes" */,
+			);
 			productRefGroup = 3F47EDAA273CA31300377BB1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -212,6 +223,7 @@
 				3FB26DD7274D659400FE9FFD /* Article.swift in Sources */,
 				3F1F7168273D8515009CE356 /* TrendingTopicCollectionViewCell.swift in Sources */,
 				3F47EDC4273CAE3C00377BB1 /* HeadlineTableViewCell.swift in Sources */,
+				3F20FBE6275195FA00B106C5 /* countryISO.swift in Sources */,
 				3F47EDB1273CA31300377BB1 /* HeadLinesViewController.swift in Sources */,
 				3F47EDAD273CA31300377BB1 /* AppDelegate.swift in Sources */,
 				3FB26DDE274D699300FE9FFD /* ApiService.swift in Sources */,
@@ -440,6 +452,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F20FBE72751A0C800B106C5 /* XCRemoteSwiftPackageReference "IsoCountryCodes" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/funky-monkey/IsoCountryCodes.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F20FBE82751A0C800B106C5 /* IsoCountryCodes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F20FBE72751A0C800B106C5 /* XCRemoteSwiftPackageReference "IsoCountryCodes" */;
+			productName = IsoCountryCodes;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3F47EDA1273CA31300377BB1 /* Project object */;
 }

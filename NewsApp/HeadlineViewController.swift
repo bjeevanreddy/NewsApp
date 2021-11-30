@@ -32,7 +32,7 @@ class HeadlineViewController: UIViewController,UITextViewDelegate{
         } catch {
             print("😡 ERROR: error thrown tryign to get imag from url \(url!)")
         }
-        contentTextView.text = article.content + "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
+        contentTextView.text = ( article.content ?? "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.")
         let attributedString = NSMutableAttributedString(string: "View In Browser")
         attributedString.addAttribute(.link, value: article.url, range: NSRange(location: 0, length: 15))
         browserLbl.attributedText = attributedString

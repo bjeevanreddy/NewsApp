@@ -64,16 +64,7 @@ extension TrendingViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "TrendingTopicCell", for: indexPath) as! TrendingTopicCollectionViewCell
         cell.topicLabel.text = trends[indexPath.row]
-        if indexPath.row == 0 {
-            cell.topicLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            cell.cellView.backgroundColor = #colorLiteral(red: 0.8743465543, green: 0.1577501893, blue: 0.2328583598, alpha: 1)
-            cell.cellView.layer.masksToBounds = true
-            let cell1 = collectionView.cellForItem(at: self.lastIndexActive) as? TrendingTopicCollectionViewCell
-            cell1?.topicLabel.textColor = .systemBlue
-            cell1?.cellView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
-            cell1?.cellView.layer.masksToBounds = true
-            self.lastIndexActive = indexPath
-        }
+       
         cell.layer.cornerRadius = 15
         
         return cell;
@@ -104,6 +95,8 @@ extension TrendingViewController:UICollectionViewDataSource{
         activityIndicator.startAnimating()
         view.isUserInteractionEnabled = false
         artcilesObj.getTrendingTopics(trend:trends[indexPath.row]){
+           
+
             DispatchQueue.main.async {
                 self.navigationItem.title = "Today's \(self.trends[indexPath.row]) Trend"
                 self.trendingTable.reloadData()
@@ -125,7 +118,7 @@ extension TrendingViewController: UITableViewDataSource{
         
         var myArticleInfo = artcilesObj.trendingArray[indexPath.row]
         cell.headingLabel.text = myArticleInfo.title
-        if myArticleInfo.urlToImage == nil{
+        if myArticleInfo.urlToImage == ""{
             myArticleInfo.urlToImage = "https://dummyimage.com/300"
         }
         let url = URL(string: myArticleInfo.urlToImage ?? "https://dummyimage.com/300")

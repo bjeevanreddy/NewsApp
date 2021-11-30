@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import IsoCountryCodes
 class Articles{
     struct ArticleModel:Codable{
         var totalResults:Int
@@ -15,6 +15,7 @@ class Articles{
     
     var articlesArray:[Article]=[]
     var trendingArray:[Article]=[]
+    var countryNewsArray:[Article]=[]
     func getHeadLinesOne(completion: @escaping ()->()){
         print("The url of the news is \(HeadLineAPI1)")
         guard let url = URL(string: HeadLineAPI1) else{
@@ -79,6 +80,32 @@ class Articles{
                 let returnedDataTrends = try JSONDecoder().decode(ArticleModel.self, from: data!)
 //                print(returnedDataTrends)
                 self.trendingArray =  returnedDataTrends.articles
+            }catch{
+                print("Cannot get data")
+                print(error)
+            }
+            completion()
+        }
+        task1.resume()
+    }
+    
+    func getCountryNews(country:String,completion: @escaping ()->()){
+        let cn = IsoCountryCodes.searchByName(country)
+        let newUrl = String("\(countryAPI)\(cn!.alpha2)").trimmingCharacters(in: .whitespaces)
+        print("The url of the country is \(newUrl)")
+       
+        guard let url = URL(string: newUrl) else{
+            return
+        }
+        let session1 =  URLSession.shared
+        
+        let task1 = session1.dataTask(with: url) { data, reponse, error in
+            if let error = error {
+                print("Error is :\(error.localizedDescription)")
+            }
+            do {
+                let returnedDataTrends = try JSONDecoder().decode(ArticleModel.self, from: data!)
+                self.countryNewsArray =  returnedDataTrends.articles
             }catch{
                 print("Cannot get data")
                 print(error)

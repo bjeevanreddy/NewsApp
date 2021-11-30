@@ -13,11 +13,12 @@
         <!--Tab Bar Controller-->
         <scene sceneID="xbe-Qj-iYH">
             <objects>
-                <tabBarController id="0bs-JG-CPR" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="overFullScreen" id="0bs-JG-CPR" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tkI-jE-GUy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="4hr-Ze-I8k" kind="relationship" relationship="viewControllers" id="ohX-4f-b73"/>
@@ -36,7 +37,7 @@
                     <tabBarItem key="tabBarItem" title="HeadLines" id="eXI-h9-Z1b">
                         <imageReference key="image" image="newspaper" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
                             <hierarchicalColors>
-                                <color white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color systemColor="systemRedColor"/>
                                 <color systemColor="secondaryLabelColor"/>
                                 <color systemColor="tertiaryLabelColor"/>
                             </hierarchicalColors>
@@ -245,7 +246,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrendingTopicCell" id="KlH-eB-zJK">
-                                        <rect key="frame" x="0.0" y="-3" width="140" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Nyj-7T-ScV">
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
@@ -298,7 +299,7 @@
                     <tabBarItem key="tabBarItem" title="Trending" id="enr-9z-s3l">
                         <imageReference key="image" image="chart.line.uptrend.xyaxis" catalog="system" renderingMode="hierarchical-single">
                             <hierarchicalColors>
-                                <color white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color systemColor="systemRedColor"/>
                                 <color white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color systemColor="tertiaryLabelColor"/>
                             </hierarchicalColors>
@@ -324,7 +325,7 @@
                     <tabBarItem key="tabBarItem" title="Countries" selectedImage="location.fill" catalog="system" id="9N1-PT-Pbt">
                         <imageReference key="image" image="location" catalog="system" renderingMode="hierarchical-single">
                             <hierarchicalColors>
-                                <color white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color systemColor="systemRedColor"/>
                                 <color systemColor="secondaryLabelColor"/>
                                 <color systemColor="tertiaryLabelColor"/>
                             </hierarchicalColors>
@@ -342,36 +343,67 @@
             </objects>
             <point key="canvasLocation" x="-441" y="-567"/>
         </scene>
-        <!--Search Any country-->
+        <!--Country News-->
         <scene sceneID="Pwi-aA-WeG">
             <objects>
-                <viewController id="cgR-LE-bgG" sceneMemberID="viewController">
+                <viewController id="cgR-LE-bgG" customClass="CountryViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DWe-Xb-kkJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for country" translatesAutoresizingMaskIntoConstraints="NO" id="L0T-HD-D2C">
+                            <searchBar contentMode="redraw" placeholder="Enter the country" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pl2-h2-X4q">
                                 <rect key="frame" x="0.0" y="49" width="320" height="51"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
+                                <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6im-Kd-iI5">
+                                <rect key="frame" x="0.0" y="125.5" width="320" height="305.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HeadlineTableViewCell" id="p2F-f1-Bn0" customClass="HeadlineTableViewCell" customModule="NewsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="49.5" width="320" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p2F-f1-Bn0" id="CGT-Hh-V5d">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News is  Loading ......." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQH-hw-Jz1">
+                                <rect key="frame" x="0.0" y="102" width="320" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="25" id="Hqo-TA-t5s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PN3-UG-L5d"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="L0T-HD-D2C" firstAttribute="top" secondItem="PN3-UG-L5d" secondAttribute="top" constant="5" id="31r-cv-UDZ"/>
-                            <constraint firstItem="L0T-HD-D2C" firstAttribute="leading" secondItem="PN3-UG-L5d" secondAttribute="leading" id="l04-xe-Mvp"/>
-                            <constraint firstItem="L0T-HD-D2C" firstAttribute="trailing" secondItem="PN3-UG-L5d" secondAttribute="trailing" id="zye-i1-idM"/>
+                            <constraint firstItem="Pl2-h2-X4q" firstAttribute="trailing" secondItem="PN3-UG-L5d" secondAttribute="trailing" id="3Uz-qB-kD2"/>
+                            <constraint firstItem="6im-Kd-iI5" firstAttribute="leading" secondItem="PN3-UG-L5d" secondAttribute="leading" id="AGH-dd-3GC"/>
+                            <constraint firstItem="PQH-hw-Jz1" firstAttribute="leading" secondItem="PN3-UG-L5d" secondAttribute="leading" id="AMR-rA-IPu"/>
+                            <constraint firstItem="PQH-hw-Jz1" firstAttribute="top" secondItem="Pl2-h2-X4q" secondAttribute="bottom" constant="2" id="BP6-nn-n1t"/>
+                            <constraint firstItem="6im-Kd-iI5" firstAttribute="trailing" secondItem="PN3-UG-L5d" secondAttribute="trailing" id="DXI-32-LEw"/>
+                            <constraint firstItem="6im-Kd-iI5" firstAttribute="top" secondItem="PQH-hw-Jz1" secondAttribute="bottom" constant="3" id="I4d-Cn-MHE"/>
+                            <constraint firstItem="PQH-hw-Jz1" firstAttribute="trailing" secondItem="PN3-UG-L5d" secondAttribute="trailing" id="l73-zt-MZO"/>
+                            <constraint firstItem="Pl2-h2-X4q" firstAttribute="leading" secondItem="PN3-UG-L5d" secondAttribute="leading" id="lvk-0p-Otf"/>
+                            <constraint firstItem="PN3-UG-L5d" firstAttribute="bottom" secondItem="6im-Kd-iI5" secondAttribute="bottom" id="u7a-9T-3yd"/>
+                            <constraint firstItem="Pl2-h2-X4q" firstAttribute="top" secondItem="DWe-Xb-kkJ" secondAttribute="topMargin" constant="5" id="zIl-aT-LlN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Any country" id="aZG-2k-hmq"/>
+                    <navigationItem key="navigationItem" title="Country News" id="aZG-2k-hmq"/>
+                    <connections>
+                        <outlet property="countryLbl" destination="PQH-hw-Jz1" id="lKN-qi-YbS"/>
+                        <outlet property="countrytableView" destination="6im-Kd-iI5" id="geF-4y-0lE"/>
+                        <outlet property="searchBar" destination="Pl2-h2-X4q" id="Y8a-36-PuO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAQ-0x-FDb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="494" y="-567"/>
+            <point key="canvasLocation" x="493.125" y="-567.5"/>
         </scene>
     </scenes>
     <resources>
@@ -393,6 +425,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>

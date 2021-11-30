@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "IsoCountryCodes",
+        "repositoryURL": "https://github.com/funky-monkey/IsoCountryCodes.git",
+        "state": {
+          "branch": null,
+          "revision": "b626d209078f8831a262fb8b0ff73aba95ba49ad",
+          "version": "1.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
