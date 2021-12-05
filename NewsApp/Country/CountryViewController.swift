@@ -8,7 +8,7 @@
 import UIKit
 
 class CountryViewController: UIViewController {
-
+    
     @IBOutlet weak var countrytableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var countryLbl:UILabel!
@@ -32,7 +32,7 @@ class CountryViewController: UIViewController {
                 self.view.isUserInteractionEnabled = true
             }
         }
-
+        
     }
     
     func startActivityIndicator(){
@@ -45,7 +45,7 @@ class CountryViewController: UIViewController {
         view.addSubview(activityIndicator)
     }
     
-
+    
 }
 
 extension CountryViewController:UITableViewDelegate{
@@ -84,17 +84,28 @@ extension CountryViewController:UITableViewDataSource{
 
 extension CountryViewController:UISearchBarDelegate{
     
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        startActivityIndicator()
-        activityIndicator.startAnimating()
-        view.isUserInteractionEnabled = false
-        artcilesObj.getCountryNews(country: searchBar.text!){
-            DispatchQueue.main.async {
-                self.countryLbl.text = "\(String(describing: searchBar.text!)) News"
-                self.countrytableView.reloadData()
-                self.activityIndicator.stopAnimating()
-                self.view.isUserInteractionEnabled = true
+       
+        if searchBar.text == ""{
+            let alert = UIAlertController(title: "Alert", message: "Search field cannot be empty", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in self.searchBar.becomeFirstResponder()}))
+            
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            startActivityIndicator()
+            activityIndicator.startAnimating()
+            view.isUserInteractionEnabled = false
+            
+            artcilesObj.getCountryNews(country: searchBar.text!){
+                
+                DispatchQueue.main.async {
+                    self.countryLbl.text = "\(String(describing: searchBar.text!)) News"
+                    self.countrytableView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    self.view.isUserInteractionEnabled = true
+                }
             }
         }
     }
