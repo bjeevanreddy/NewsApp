@@ -13,6 +13,8 @@ class TrendingViewController: UIViewController {
     
     @IBOutlet weak var trendingTable: UITableView!
     var activityIndicator=UIActivityIndicatorView()
+    private let refreshControl = UIRefreshControl()
+
     var artcilesObj=Articles()
     var trends = ["Apple","Tesla","Google","Science","Technology","Entertainment","Bitcoin","stocks"]
     override func viewDidLoad() {
@@ -21,6 +23,16 @@ class TrendingViewController: UIViewController {
         topicsCollections.delegate = self
         trendingTable.dataSource = self
         trendingTable.delegate = self
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching News Hold On!!")
+        refreshControl.tintColor = .blue
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            trendingTable.refreshControl = refreshControl
+        } else {
+            trendingTable.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(self.getNews(_:)), for: .valueChanged)
+        
         let Colectionnib = UINib(nibName: "TrendingTopicCollectionViewCell", bundle: nil)
         topicsCollections.register(Colectionnib, forCellWithReuseIdentifier: "TrendingTopicCell")
         let TableCellnib = UINib(nibName: "HeadlineTableViewCell", bundle: nil)
@@ -35,6 +47,19 @@ class TrendingViewController: UIViewController {
                 self.trendingTable.reloadData()
                 self.activityIndicator.stopAnimating()
                 self.view.isUserInteractionEnabled = true
+            }
+        }
+    }
+    @objc private func getNews(_ sender: Any) {
+        
+        artcilesObj.getHeadLinesOne {
+            
+            DispatchQueue.main.async {
+                self.navigationItem.title = "Today's HeadLines"
+                
+                self.trendingTable.reloadData()
+                
+                self.refreshControl.endRefreshing()
             }
         }
     }

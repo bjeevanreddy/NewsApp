@@ -19,8 +19,8 @@ class CountryViewController: UIViewController {
         countrytableView.delegate = self
         countrytableView.dataSource = self
         searchBar.delegate = self
-        let TableCellnib = UINib(nibName: "HeadlineTableViewCell", bundle: nil)
-        countrytableView.register(TableCellnib, forCellReuseIdentifier: "HeadlineTableViewCell")
+        let TableCellnib = UINib(nibName: "CountryNewsCell", bundle: nil)
+        countrytableView.register(TableCellnib, forCellReuseIdentifier: "CountryNewsCell")
         startActivityIndicator()
         activityIndicator.startAnimating()
         view.isUserInteractionEnabled = false
@@ -57,26 +57,26 @@ extension CountryViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HeadlineTableViewCell", for: indexPath) as! HeadlineTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CountryNewsCell", for: indexPath) as! CountryNewsCell
         var myArticleInfo = artcilesObj.countryNewsArray[indexPath.row]
-        cell.headingLabel.text = myArticleInfo.title
+        cell.titleLbl.text = myArticleInfo.title
         if myArticleInfo.urlToImage == ""{
             myArticleInfo.urlToImage = "https://dummyimage.com/300"
         }
         let url = URL(string: myArticleInfo.urlToImage ?? "https://dummyimage.com/300")
         do {
             let data = try Data(contentsOf: url!)
-            cell.headlineImage.image = UIImage(data: data)
+            cell.newsImg.image = UIImage(data: data)
             
         } catch {
             print("😡 ERROR: error thrown tryign to get imag from url \(url!)")
         }
-        cell.contentLabel.text = myArticleInfo.content
+        cell.contentLbl.text = myArticleInfo.content
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120;
+        return 300;
     }
     
     

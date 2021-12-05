@@ -2,12 +2,30 @@
   "object": {
     "pins": [
       {
+        "package": "FoldingCell",
+        "repositoryURL": "https://github.com/Ramotion/folding-cell.git",
+        "state": {
+          "branch": null,
+          "revision": "5cf01ed2b48eac4385a599e9f40f438655bf4147",
+          "version": "5.0.2"
+        }
+      },
+      {
         "package": "IsoCountryCodes",
         "repositoryURL": "https://github.com/funky-monkey/IsoCountryCodes.git",
         "state": {
           "branch": null,
           "revision": "b626d209078f8831a262fb8b0ff73aba95ba49ad",
           "version": "1.0.1"
+        }
+      },
+      {
+        "package": "ViewAnimator",
+        "repositoryURL": "https://github.com/marcosgriselli/ViewAnimator.git",
+        "state": {
+          "branch": null,
+          "revision": "55f1c46241b181c3e0b68d70edb6d87926c7d183",
+          "version": "3.1.0"
         }
       }
     ]

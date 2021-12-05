@@ -22,6 +22,9 @@
 		3F47EDC1273CABE500377BB1 /* HeadlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47EDC0273CABE400377BB1 /* HeadlineViewController.swift */; };
 		3F47EDC4273CAE3C00377BB1 /* HeadlineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F47EDC2273CAE3C00377BB1 /* HeadlineTableViewCell.swift */; };
 		3F47EDC5273CAE3C00377BB1 /* HeadlineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F47EDC3273CAE3C00377BB1 /* HeadlineTableViewCell.xib */; };
+		3FA569322759619B003F3DB8 /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = 3FA569312759619B003F3DB8 /* ViewAnimator */; };
+		3FA5693527596707003F3DB8 /* CountryNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5693327596707003F3DB8 /* CountryNewsCell.swift */; };
+		3FA5693627596707003F3DB8 /* CountryNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FA5693427596707003F3DB8 /* CountryNewsCell.xib */; };
 		3FB26DD7274D659400FE9FFD /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB26DD6274D659400FE9FFD /* Article.swift */; };
 		3FB26DD9274D65D400FE9FFD /* SourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB26DD8274D65D400FE9FFD /* SourceModel.swift */; };
 		3FB26DDB274D65ED00FE9FFD /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB26DDA274D65ED00FE9FFD /* Articles.swift */; };
@@ -46,6 +49,8 @@
 		3F47EDC0273CABE400377BB1 /* HeadlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineViewController.swift; sourceTree = "<group>"; };
 		3F47EDC2273CAE3C00377BB1 /* HeadlineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineTableViewCell.swift; sourceTree = "<group>"; };
 		3F47EDC3273CAE3C00377BB1 /* HeadlineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadlineTableViewCell.xib; sourceTree = "<group>"; };
+		3FA5693327596707003F3DB8 /* CountryNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNewsCell.swift; sourceTree = "<group>"; };
+		3FA5693427596707003F3DB8 /* CountryNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryNewsCell.xib; sourceTree = "<group>"; };
 		3FB26DD6274D659400FE9FFD /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		3FB26DD8274D65D400FE9FFD /* SourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceModel.swift; sourceTree = "<group>"; };
 		3FB26DDA274D65ED00FE9FFD /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA569322759619B003F3DB8 /* ViewAnimator in Frameworks */,
 				3F20FBE92751A0C800B106C5 /* IsoCountryCodes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				3F20FBE32751818400B106C5 /* CountryViewController.swift */,
+				3FA5693327596707003F3DB8 /* CountryNewsCell.swift */,
+				3FA5693427596707003F3DB8 /* CountryNewsCell.xib */,
 			);
 			path = Country;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			name = NewsApp;
 			packageProductDependencies = (
 				3F20FBE82751A0C800B106C5 /* IsoCountryCodes */,
+				3FA569312759619B003F3DB8 /* ViewAnimator */,
 			);
 			productName = NewsApp;
 			productReference = 3F47EDA9273CA31300377BB1 /* NewsApp.app */;
@@ -189,6 +198,7 @@
 			mainGroup = 3F47EDA0273CA31300377BB1;
 			packageReferences = (
 				3F20FBE72751A0C800B106C5 /* XCRemoteSwiftPackageReference "IsoCountryCodes" */,
+				3FA569302759619B003F3DB8 /* XCRemoteSwiftPackageReference "ViewAnimator" */,
 			);
 			productRefGroup = 3F47EDAA273CA31300377BB1 /* Products */;
 			projectDirPath = "";
@@ -207,6 +217,7 @@
 				3F47EDB9273CA31B00377BB1 /* LaunchScreen.storyboard in Resources */,
 				3F47EDB6273CA31B00377BB1 /* Assets.xcassets in Resources */,
 				3F47EDB4273CA31300377BB1 /* Main.storyboard in Resources */,
+				3FA5693627596707003F3DB8 /* CountryNewsCell.xib in Resources */,
 				3F1F7169273D8515009CE356 /* TrendingTopicCollectionViewCell.xib in Resources */,
 				3F47EDC5273CAE3C00377BB1 /* HeadlineTableViewCell.xib in Resources */,
 			);
@@ -224,6 +235,7 @@
 				3F1F7168273D8515009CE356 /* TrendingTopicCollectionViewCell.swift in Sources */,
 				3F47EDC4273CAE3C00377BB1 /* HeadlineTableViewCell.swift in Sources */,
 				3F20FBE6275195FA00B106C5 /* countryISO.swift in Sources */,
+				3FA5693527596707003F3DB8 /* CountryNewsCell.swift in Sources */,
 				3F47EDB1273CA31300377BB1 /* HeadLinesViewController.swift in Sources */,
 				3F47EDAD273CA31300377BB1 /* AppDelegate.swift in Sources */,
 				3FB26DDE274D699300FE9FFD /* ApiService.swift in Sources */,
@@ -462,6 +474,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		3FA569302759619B003F3DB8 /* XCRemoteSwiftPackageReference "ViewAnimator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcosgriselli/ViewAnimator.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -469,6 +489,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3F20FBE72751A0C800B106C5 /* XCRemoteSwiftPackageReference "IsoCountryCodes" */;
 			productName = IsoCountryCodes;
+		};
+		3FA569312759619B003F3DB8 /* ViewAnimator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FA569302759619B003F3DB8 /* XCRemoteSwiftPackageReference "ViewAnimator" */;
+			productName = ViewAnimator;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
