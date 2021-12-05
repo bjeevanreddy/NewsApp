@@ -29,6 +29,7 @@ class Articles{
             }
             do {
                 let returnedData1 = try JSONDecoder().decode(ArticleModel.self, from: data!)
+                print(returnedData1)
                 self.articlesArray =  returnedData1.articles
             }catch{
                 print("Cannot get data")
