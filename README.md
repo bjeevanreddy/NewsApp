@@ -6,14 +6,16 @@ For the HeadLines tab, we are displaying top 200 headlines from the two sources 
 
 For the Countries tab, we have designed this screen to display the brief news related to the specific country.
 
+In Trending tab, trending news will be displayed on the screen and user can select particular catogery from collection view, to see trending new about that catogery.
+
 ## Team members
 
 - Jeevan Bodigam
 - Sharada Devi Noothalapati
-- Shivaram Kothapally
-- Tejaswini Nallavolu
+- Shiva Ram Kothapally
+- Tejaswi Reddy Nallavolu
 - Jaya Kumar Saga
-- Keethi Muli
+- Keerthi Muli
 
 We are using the NewsAPI for fetching the news: https://newsapi.org/docs/endpoints/everything
 
