@@ -13,4 +13,17 @@ Keethi Muli
 
 We are using the NewsAPI for fetching the news: https://newsapi.org/docs/endpoints/everything
 
+Below are the api links we have used in our Project.
 
+# For Main HeadLines:
+
+HeadLineAPI1="https://newsapi.org/v2/everything?domains=bbc.co.uk&sortBy=publishedAt&pageSize=100&apiKey=0423b0cf114e4c51bd3a1c5efd577578"
+
+HeadLineAPI2="https://newsapi.org/v2/everything?domains=engadget.com&sortBy=publishedAt&pageSize=100&language=en&apiKey=0423b0cf114e4c51bd3a1c5efd577578"
+
+
+# For Trending News:
+TrendingAPI="https://newsapi.org/v2/everything?apiKey=0423b0cf114e4c51bd3a1c5efd577578&sortBy=publishedAt&pageSize=100&language=en&q="
+
+# For County news:
+countryAPI="https://newsapi.org/v2/top-headlines?apiKey=0423b0cf114e4c51bd3a1c5efd577578&country="
