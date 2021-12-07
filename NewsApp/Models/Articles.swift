@@ -69,7 +69,6 @@ class Articles{
         guard let url = URL(string: newUrl) else{
             return
         }
-//        print(url)
         let session1 =  URLSession.shared
         
         let task1 = session1.dataTask(with: url) { data, reponse, error in
@@ -77,9 +76,7 @@ class Articles{
                 print("Error is :\(error.localizedDescription)")
             }
             do {
-//                print("jj")
                 let returnedDataTrends = try JSONDecoder().decode(ArticleModel.self, from: data!)
-//                print(returnedDataTrends)
                 self.trendingArray =  returnedDataTrends.articles
             }catch{
                 print("Cannot get data")

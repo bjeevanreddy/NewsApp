@@ -46,7 +46,7 @@
                         <imageReference key="selectedImage" image="newspaper.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6HP-Em-Omi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -308,7 +308,7 @@
                         <imageReference key="selectedImage" image="chart.line.uptrend.xyaxis.circle.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OcO-5Z-G7F">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
