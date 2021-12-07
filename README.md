@@ -2,6 +2,8 @@
 
 A simple NewsApp for iOS mobile devices where users can view latest news.
 
+For the Countries tab, we have designed this screen to display the brief news related to the specific country.
+
 ## Team members
 
 - Jeevan Bodigam
