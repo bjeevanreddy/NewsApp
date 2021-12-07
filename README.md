@@ -31,3 +31,5 @@ TrendingAPI="https://newsapi.org/v2/everything?apiKey=0423b0cf114e4c51bd3a1c5efd
 
 # For County news:
 countryAPI="https://newsapi.org/v2/top-headlines?apiKey=0423b0cf114e4c51bd3a1c5efd577578&country="
+
+This application is responsive and works on all low end devices. we have used third party libraries for getting country iso codes and tableview.
